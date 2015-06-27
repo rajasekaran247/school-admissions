@@ -8,9 +8,9 @@
                     <a class="dropdown-toggle" href>
                             <span class="clear">
                                 <span class="block m-t-xs">
-                                    <strong class="font-bold">{{main.userName}}</strong>
+                                    <strong class="font-bold">{{authentication.user.displayName}}</strong>
                              </span>
-                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
+                                <span class="text-muted text-xs block">{{authentication.user.roles[0]}}<b class="caret"></b></span>
                             </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -22,7 +22,7 @@
                 </div>
             </li>
             <li ng-class="{active: $uiRoute}" ui-route="/" >
-                <a href="/#!/home"><i class="fa fa-laptop"></i> <span class="nav-label">Index</span></a>
+                <a href="/#!/home"><i class="fa fa-laptop"></i> <span class="nav-label">Dashboard</span></a>
             </li>
             <li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" ng-class="{active: ($uiRoute)}">
                 <a href=""><i class="fa {{item.iconClass}}"></i> <span class="nav-label">{{item.title}} </span> <span ng-show="item.items" class="fa arrow"></span></a>
