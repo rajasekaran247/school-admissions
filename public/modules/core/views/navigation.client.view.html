@@ -4,7 +4,7 @@
             <li class="nav-header">
                 <div class="dropdown profile-element">
                     <!-- Picture of user -->
-                    <!--<img alt="image" class="img-circle" src="img/profile_small.jpg"/>-->
+                    <!-- <img alt="image" class="img-circle" src="img/profile_small.png"/> -->
                     <a class="dropdown-toggle" href>
                             <span class="clear">
                                 <span class="block m-t-xs">
@@ -18,11 +18,11 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    IN+
+                    247
                 </div>
             </li>
             <li ng-class="{active: $uiRoute}" ui-route="/" >
-                <a href="/#!/home"><i class="fa fa-laptop"></i> <span class="nav-label">Dashboard</span></a>
+                <a href="/#!/home"><i class="fa fa-laptop"></i> <span class="nav-label">Index</span></a>
             </li>
             <li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" ng-class="{active: ($uiRoute)}">
                 <a href=""><i class="fa {{item.iconClass}}"></i> <span class="nav-label">{{item.title}} </span> <span ng-show="item.items" class="fa arrow"></span></a>
